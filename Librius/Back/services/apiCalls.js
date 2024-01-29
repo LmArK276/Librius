@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const apiKey =  "AIzaSyDBZrsCrJi8h4ek1x48L3hs0XeA3rWpphs"
+const apiKey =  "sample_to_be_changed"
 const apiBase =  "https://www.googleapis.com/books/v1/volumes"
 
 
