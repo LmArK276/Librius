@@ -1,0 +1,31 @@
+<div class="container-fluid d-flex justify-content-center align-content-center" style="margin-top: 200px;">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 mb-4" *ngFor="let book of books">
+      <div (click)="showBookDetails(book.id)" class="card fixed-card-width mx-auto" style="cursor: pointer;">
+        <div>
+          <img [src]="book.coverImage ? book.coverImage : noImagePath" class="card-img-top img-fluid" alt="Book Cover">
+          <div class="card-body card-content">
+            <h5 class="card-title">{{book.title}}</h5>
+            <p class="card-text">
+              <span *ngIf="book.authors && book.authors.length == 1">
+                {{book.authors[0]}}
+              </span>
+              <span *ngIf="book.authors && book.authors.length == 0">
+                No author provided
+              </span>
+              <span *ngIf="book.authors && book.authors.length > 1">
+                {{book.authors[0]}}...
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="loading-container mt-4" *ngIf="((isLoading | async )|| books.length === 0)">
+  <div class="loading-spinner">
+    <span class="loader"></span>
+  </div>
+</div>

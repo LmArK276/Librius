@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="login-container p-5">
+      <h2 class="mb-4 text-center fs-2">Login</h2>
+      <form (ngSubmit)="login()">
+          <div class="mb-4">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" aria-describedby="emailHelp" required>
+          </div>
+          <div class="mb-4">
+              <label for="password" class="form-label">Password</label>
+              <div class="input-group">
+                  <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="password" name="password" [(ngModel)]="password" required>
+                  <button class="btn btn-outline-secondary" type="button" (click)="togglePasswordVisibility()">
+                    <i [ngClass]="showPassword ? 'bi bi-eye-slash' : 'bi bi-eye'"></i>
+                </button>
+              </div>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Login</button>
+      </form>
+      <p class="mt-4 text-center">Don't have an account? <a routerLink="/register">Register</a></p>
+  </div>
+</div>

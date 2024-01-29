@@ -1,0 +1,23 @@
+
+.navbar {
+  border-bottom: 2px solid #e74c3c; /* Red border line */
+  background-color: white; /* Navbar background color */
+}
+
+.navbar-brand {
+  color: #e74c3c; /* Red text color */
+  font-style: italic; /* Italics */
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+.search-input {
+  width: 300px; /* Adjust the width as needed */
+  padding: 5px 10px; /* Adjust padding for a compact look */
+  border-radius: 3px; /* Rounded corners */
+}
+
+.search-button {
+  padding: 5px 15px; /* Adjust padding for a compact look */
+  border-radius: 3px; /* Rounded corners */
+}

@@ -1,0 +1,19 @@
+.card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.07);
+  border: 1px solid #e74c3c
+}
+
+.card img {
+  height: 180px; /* Adjust the height as needed */
+  object-fit: contain; /* Maintain aspect ratio and cover container */
+}
+
+.card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

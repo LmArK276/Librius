@@ -1,0 +1,32 @@
+<div class="container d-flex justify-content-center align-items-center vh-100" *ngIf="!(isLoading|async) && book">
+  <div class="row">
+    <div class="col-md-3">
+      <!-- Book Thumbnail -->
+      <img [src]="book!.coverImage" alt="Book Thumbnail" class="img-fluid img-large">
+    </div>
+    <div class="col-md-9">
+      <!-- Book Title -->
+      <h2>{{ book!.title }}</h2>
+
+      <!-- Book Details -->
+      <p><strong>Author:</strong> {{ book!.authors.join(', ') }}</p>
+      <p><strong>Published Date:</strong> {{ book!.publishedDate }}</p>
+      <p><strong>Page Count:</strong> {{ book!.pageCount }}</p>
+      <div style="max-height: 300px; overflow-y: auto;" [innerHTML]="book!.description"></div>
+      <!-- Add more details here -->
+
+      <div class="d-grid gap-2" *ngIf=" this.currEmail != '' " >
+        <button *ngIf="(this.isFavorite$|async)" class="btn btn-primary mt-5 btn-lg btn-block" (click)="addFavorite()">Add book to Favorites</button>
+        <button *ngIf="!(this.isFavorite$|async)" class="btn btn-primary mt-5 btn-lg btn-block" (click)="removeFavorite()">Remove book from Favorites</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="loading-container" *ngIf="(isLoading | async) || !book">
+  <div class="loading-spinner">
+    <span class="loader"></span>
+  </div>
+</div>
+
